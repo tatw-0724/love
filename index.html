@@ -1,52 +1,63 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
 <head>
-<meta charset="UTF-8">
-<title>来自[你的名字]的心意</title>
-<style>
-body {
-    font-family: 'Arial', sans-serif;
-    text-align: center;
-    background-color: #f7f7f7;
-    color: #333;
-}
-h1, p {
-    margin: 20px 0;
-}
-.container {
-    width: 80%;
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-top: 20px;
-    font-size: 16px;
-    color: white;
-    background-color: #ff6b6b;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
-}
-.button:hover {
-    background-color: #ff4c4c;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱心弹窗示例</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .heart {
+            font-size: 100px;
+            cursor: pointer;
+            color: red;
+            transition: transform 0.2s;
+        }
+        .heart:hover {
+            transform: scale(1.1);
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background: white;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-    <h1>[你的名字] 对你说：</h1>
-    <p>在这个特别的日子里，我想对你说一些藏在心里很久的话。</p>
-    <p>自从遇见你之后，我的世界变得不一样了。你就像一束光，照亮了我生活的每一个角落。</p>
-    <p>我想告诉你，我喜欢你，不仅仅是因为你的笑容，更是因为你善良、真诚的品质。</p>
-    <p>不知道你是否愿意给我一个机会，让我陪你一起走过未来的日子？</p>
-    <a href="javascript:void(0);" class="button" onclick="alert('我也喜欢你！');">点击回应</a>
+
+<div class="heart" onclick="showPopup()">❤️</div>
+
+<div class="popup" id="popup">
+    <h2>你喜欢这个爱心吗？</h2>
+    <button onclick="like()">喜欢</button>
+    <button onclick="dislike()">不喜欢</button>
 </div>
+
+<script>
+    function showPopup() {
+        document.getElementById('popup').style.display = 'block';
+    }
+
+    function like() {
+        window.location.href = 'test7.html'; // 跳转到新页面
+    }
+
+    function dislike() {
+        document.getElementById('popup').style.display = 'block';
+    }
+</script>
+
 </body>
 </html>
